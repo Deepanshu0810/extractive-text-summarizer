@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <title>Text Summarizer</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Text Summarizer</h1>
+        </div>
+        <div class="nav-links">
+            <p>Created By Deepanshu Anand</p>
+        </div>
+    </nav>
+    <section class="section-1">
+        <div class="container">
+            <div class="user-input">
+                <form action="/summary" method="post" enctype="multipart/form-data">
+                    <div>
+                        <label for="file">
+                            Submit Your File
+                        </label>
+                    </div>
+                    <input type="file" name="file" id="file">
+                    <button type="submit">GET SUMMARY</button>
+                </form>
+            </div>
+            <div class="output-area">
+    
+                {% if summary1 %}
+                <div class="output card">
+                    <h1>Summary 1</h1>
+                    {{summary1}}
+                </div>
+                {% endif %}
+                {% if summary2 %}
+                <div class="output card">
+                    <h1>Summary 2</h1>
+                    {{summary2}}
+                </div>
+                {% endif %}
+                {% if summary3 %}
+                <div class="output card">
+                    <h1>Summary 2</h1>
+                    {{summary3}}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <script src="{{url_for('static',filename='main.js')}}"></script>
+</body>
+</html>

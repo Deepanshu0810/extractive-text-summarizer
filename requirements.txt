@@ -1,0 +1,8 @@
+regex
+heapq
+flask
+nltk
+sumy
+lexrank
+skipthoughts
+sklearn
